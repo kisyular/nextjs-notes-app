@@ -26,12 +26,12 @@ const Nav = () => {
 			<Link href='/' className='flex gap-2 flex-center'>
 				<Image
 					src='/assets/images/logo.svg'
-					alt='Promptopia Logo'
+					alt='Notes Logo'
 					width={30}
 					height={30}
 					className='object-contain'
 				/>
-				<p className='logo_text'>Prompts</p>
+				<p className='logo_text'>Notes</p>
 			</Link>
 
 			{/* Desktop Navigation */}
@@ -39,7 +39,7 @@ const Nav = () => {
 				{session?.user ? (
 					<div className='flex gap-3 md:gap-5'>
 						<Link href='/create-prompt' className='black_btn'>
-							Create Post
+							Create Note
 						</Link>
 
 						<button
@@ -104,7 +104,7 @@ const Nav = () => {
 									className='dropdown_link'
 									onClick={() => setToggleDropdown(false)}
 								>
-									Create Prompt
+									Create Note
 								</Link>
 								<button
 									type='button'

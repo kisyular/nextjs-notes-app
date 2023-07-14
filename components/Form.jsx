@@ -1,13 +1,13 @@
 import Link from 'next/link'
 
-const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
+const Form = ({ type, post, setNotes, submitting, handleSubmit }) => {
 	return (
 		<section className='w-full max-w-full flex-start flex-col'>
 			<h1 className='head_text text-left'>
-				<span className='blue_gradient'>{type} Post</span>
+				<span className='blue_gradient'>{type} Note</span>
 			</h1>
 			<p className='desc text-left max-w-md'>
-				{type} and share amazing prompts with the world, and let your
+				{type} and share amazing thoughts with the world, and let your
 				imagination run wild with any AI-powered platform
 			</p>
 
@@ -17,13 +17,13 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
 			>
 				<label>
 					<span className='font-satoshi font-semibold text-base text-gray-700'>
-						Your AI Prompt
+						Your Note
 					</span>
 
 					<textarea
 						value={post.prompt}
 						onChange={(e) =>
-							setPost({ ...post, prompt: e.target.value })
+							setNotes({ ...post, prompt: e.target.value })
 						}
 						placeholder='Write your post here'
 						required
@@ -33,7 +33,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
 
 				<label>
 					<span className='font-satoshi font-semibold text-base text-gray-700'>
-						Field of Prompt{' '}
+						Field of Note{' '}
 						<span className='font-normal'>
 							(#product, #webdevelopment, #idea, etc.)
 						</span>
@@ -41,7 +41,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
 					<input
 						value={post.tag}
 						onChange={(e) =>
-							setPost({ ...post, tag: e.target.value })
+							setNotes({ ...post, tag: e.target.value })
 						}
 						type='text'
 						placeholder='#Tag'

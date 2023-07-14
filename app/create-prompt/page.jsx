@@ -11,7 +11,7 @@ const CreatePrompt = () => {
 	const { data: session } = useSession()
 
 	const [submitting, setIsSubmitting] = useState(false)
-	const [post, setPost] = useState({ prompt: '', tag: '' })
+	const [note, setNote] = useState({ prompt: '', tag: '' })
 
 	const createPrompt = async (e) => {
 		e.preventDefault()
@@ -21,9 +21,9 @@ const CreatePrompt = () => {
 			const response = await fetch('/api/prompt/new', {
 				method: 'POST',
 				body: JSON.stringify({
-					prompt: post.prompt,
+					prompt: note.prompt,
 					userId: session?.user.id,
-					tag: post.tag,
+					tag: note.tag,
 				}),
 			})
 
@@ -40,8 +40,8 @@ const CreatePrompt = () => {
 	return (
 		<Form
 			type='Create'
-			post={post}
-			setPost={setPost}
+			post={note}
+			setNotes={setNote}
 			submitting={submitting}
 			handleSubmit={createPrompt}
 		/>

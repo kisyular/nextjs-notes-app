@@ -5,10 +5,10 @@ export const GET = async (request) => {
 	try {
 		await connectToDB()
 
-		const prompts = await Prompt.find({}).populate('creator')
+		const notes = await Prompt.find({}).populate('creator')
 
-		return new Response(JSON.stringify(prompts), { status: 200 })
+		return new Response(JSON.stringify(notes), { status: 200 })
 	} catch (error) {
-		return new Response('Failed to fetch all prompts', { status: 500 })
+		return new Response('Failed to fetch all notes', { status: 500 })
 	}
 }
